@@ -3,8 +3,11 @@
 namespace Wexample\SymfonyEntityTransfer\Service;
 
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 use Throwable;
 use Wexample\SymfonyEntityTransfer\Class\TransferReport;
+use Wexample\SymfonyEntityTransfer\DependencyInjection\WexampleSymfonyEntityTransferExtension;
+use Wexample\SymfonyEntityTransfer\Interface\FileUpcasterInterface;
 use Wexample\SymfonyEntityTransfer\Dto\File\AbstractImportRootDto;
 use Wexample\SymfonyHelpers\Entity\AbstractEntity;
 use Wexample\SymfonyHelpers\Helper\JsonHelper;
@@ -16,7 +19,8 @@ use Wexample\SymfonyHelpers\Helper\JsonHelper;
  * not at all, its references connected before it commits.
  *
  * A file of several types at once is the application's to read
- * (importOtherData()): which types, in which order.
+ * (importOtherData()): which types, in which order. A file of an older
+ * shape is brought to today's first (FileUpcasterInterface).
  */
 abstract class AbstractImportExportCollectionService
 {
@@ -24,7 +28,24 @@ abstract class AbstractImportExportCollectionService
         protected readonly ImportReferencesBagService $referencesBagService,
         protected readonly ImportExportServiceLocator $serviceLocator,
         protected readonly ManagerRegistry $managerRegistry,
+        /** @var iterable<FileUpcasterInterface> */
+        #[AutowireIterator(WexampleSymfonyEntityTransferExtension::TAG_UPCASTER)]
+        protected readonly iterable $upcasters = [],
     ) {
+    }
+
+    /**
+     * The file in today's shape, every upcaster supporting it applied.
+     */
+    public function upcast(array $file): array
+    {
+        foreach ($this->upcasters as $upcaster) {
+            if ($upcaster->supports($file)) {
+                $file = $upcaster->upcast($file);
+            }
+        }
+
+        return $file;
     }
 
     /**
@@ -82,6 +103,7 @@ abstract class AbstractImportExportCollectionService
         bool $stopOnFailure = false,
     ): TransferReport {
         $report = new TransferReport($dryRun);
+        $data = $this->upcast($data);
         $entityName = $data['entity'] ?? null;
         $type = $data['type'] ?? null;
 

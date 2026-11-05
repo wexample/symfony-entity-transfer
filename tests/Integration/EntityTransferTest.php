@@ -102,6 +102,13 @@ class EntityTransferTest extends KernelTestCase
         $this->assertSame(['first'], $this->names());
     }
 
+    public function testAnOlderFileIsUpcastBeforeItIsImported(): void
+    {
+        $this->collection()->importData(['version' => '0.9', 'type' => 'single', 'entity' => 'shelf', 'data' => ['_ref' => 's', 'name' => 'old', 'label' => 'Old shelf']]);
+
+        $this->assertSame('Old shelf', $this->entityManager->getRepository(Shelf::class)->findOneBy(['name' => 'old'])->title);
+    }
+
     private function shelf(string $name, array $titles, ?string $codePrefix = null, array $codes = []): array
     {
         return [

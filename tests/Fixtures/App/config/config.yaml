@@ -28,3 +28,6 @@ services:
   test.collection_service:
     alias: Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Service\LibraryCollectionService
     public: true
+
+  Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Upcaster\:
+    resource: '../Upcaster/'

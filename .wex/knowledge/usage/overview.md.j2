@@ -43,3 +43,21 @@ $entities = $collection->importData($data);           // stops on, and throws, t
 - **Each root in a transaction of its own**: imported whole — its children, its references connected — or not at all. A failed root leaves no row behind, and the roots after it are imported (`transfer()`) or not attempted (`importData()`).
 - A failed flush closes Doctrine's entity manager: it is reset before the next root.
 - The reference bags are emptied between roots and between requests (`ResetInterface`).
+
+## Older files
+
+A file keeps importing after the application changes: an upcaster brings it to today's shape first, so that the import services know one shape only.
+
+```php
+class ScenarioEnvironmentUpcaster implements FileUpcasterInterface   // autoconfigured
+{
+    public function supports(array $file): bool
+    {
+        return version_compare($file['version'] ?? '0', '0.4', '<');
+    }
+
+    public function upcast(array $file): array { /* the key renamed, the value read otherwise */ }
+}
+```
+
+Every upcaster supporting the file is applied, in the order of their tag's priority, before `transfer()` / `importData()` read it; `upcast()` alone gives the file in today's shape. The file's `version` is what they read: an export writes the application's.
