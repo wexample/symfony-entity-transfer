@@ -1,11 +1,44 @@
 {
   "name": "wexample/symfony-entity-transfer",
+  "description": "Import and export of Doctrine entities as files: references between them, unique reuse, one transaction per root, dry runs",
   "version": "1.0.1",
-  "type": "library",
+  "type": "symfony-bundle",
   "license": "MIT",
+  "require": {
+    "php": ">=8.5",
+    "wexample/symfony-helpers": ">=19.1.0",
+    "wexample/symfony-api": ">=16.0.4",
+    "doctrine/orm": "^3.0",
+    "doctrine/doctrine-bundle": "^2.13",
+    "symfony/validator": "^7.4|^8.0",
+    "symfony/security-core": "^7.4|^8.0",
+    "symfony/serializer": "^7.4|^8.0",
+    "symfony/property-info": "^7.4|^8.0",
+    "symfony/type-info": "^7.4|^8.0",
+    "phpstan/phpdoc-parser": "^2.0",
+    "phpdocumentor/reflection-docblock": "^5.4|^6.0"
+  },
+  "require-dev": {
+    "wexample/symfony-testing": ">=6.0.0",
+    "phpunit/phpunit": "^13"
+  },
   "autoload": {
     "psr-4": {
       "Wexample\\SymfonyEntityTransfer\\": "src/"
     }
-  }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Wexample\\SymfonyEntityTransfer\\Tests\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*",
+      "options": {
+        "symlink": true
+      }
+    }
+  ]
 }

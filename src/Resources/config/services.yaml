@@ -1,0 +1,21 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Wexample\SymfonyEntityTransfer\:
+        resource: '../../{Service,Validator}'
+
+    # The import / export service of each entity, by the entity it handles.
+    Wexample\SymfonyEntityTransfer\Service\ImportExportServiceLocator:
+        arguments:
+            - !tagged_locator { tag: 'wexample.entity_transfer.entity_service', default_index_method: 'getEntityClassName' }
+
+    # Nested import DTOs — a scenario's jobs, a shelf's books — denormalized
+    # as the classes their properties declare.
+    Wexample\SymfonyEntityTransfer\Serializer\ImportDenormalizer:
+        arguments:
+            $propertyInfo: '@property_info'
+        tags:
+            - { name: 'serializer.normalizer' }

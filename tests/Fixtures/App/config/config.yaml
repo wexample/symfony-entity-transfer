@@ -1,0 +1,30 @@
+doctrine:
+  orm:
+    mappings:
+      FixtureApp:
+        type: attribute
+        dir: '%kernel.project_dir%/Entity'
+        prefix: 'Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Entity'
+        is_bundle: false
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  # symfony-api's, which a host application registers with its bundle.
+  Wexample\SymfonyApi\Service\DtoValidationService: ~
+
+  Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Repository\:
+    resource: '../Repository/'
+
+  Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Normalizer\:
+    resource: '../Normalizer/'
+
+  Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Service\:
+    resource: '../Service/'
+
+  test.collection_service:
+    alias: Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Service\LibraryCollectionService
+    public: true
