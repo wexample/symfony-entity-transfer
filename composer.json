@@ -1,13 +1,13 @@
 {
   "name": "wexample/symfony-entity-transfer",
   "description": "Import and export of Doctrine entities as files: references between them, unique reuse, one transaction per root, dry runs",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "symfony-bundle",
   "license": "MIT",
   "require": {
     "php": ">=8.5",
     "wexample/symfony-helpers": ">=19.1.0",
-    "wexample/symfony-api": ">=16.0.4",
+    "wexample/symfony-api": ">=17.0.0",
     "doctrine/orm": "^3.0",
     "doctrine/doctrine-bundle": "^2.13",
     "symfony/validator": "^7.4|^8.0",

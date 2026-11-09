@@ -1,0 +1,1 @@
+Import and export of Doctrine entities as files: an entity and what hangs from it written as JSON, read back into new rows — its relations found by id, by a unique field, by a reference in the same file, or inline.
