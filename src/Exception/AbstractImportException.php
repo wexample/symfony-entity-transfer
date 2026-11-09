@@ -2,10 +2,10 @@
 
 namespace Wexample\SymfonyEntityTransfer\Exception;
 
+use Wexample\SymfonyApi\Exception\AbstractApiException;
 use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 use Wexample\SymfonyEntityTransfer\Dto\AbstractImportValidationDto;
 use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
-use Wexample\SymfonyApi\Exception\AbstractApiException;
 
 /**
  * Base exception class for all import-related exceptions

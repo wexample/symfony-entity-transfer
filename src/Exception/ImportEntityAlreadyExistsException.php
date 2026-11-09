@@ -2,9 +2,9 @@
 
 namespace Wexample\SymfonyEntityTransfer\Exception;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 use Wexample\Helpers\Helper\ClassHelper;
 use Wexample\SymfonyApi\Exception\AbstractApiException;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 
 /**
  * Exception thrown when an entity referenced by ID cannot be found during import

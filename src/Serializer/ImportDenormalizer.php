@@ -2,16 +2,16 @@
 
 namespace Wexample\SymfonyEntityTransfer\Serializer;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractImportValidationDto;
-use Wexample\SymfonyEntityTransfer\Exception\PropertyTypeException;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractorInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
+use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\TypeInfo\Type;
 use Symfony\Component\TypeInfo\Type\CollectionType;
 use Symfony\Component\TypeInfo\Type\NullableType;
 use Symfony\Component\TypeInfo\Type\ObjectType;
-use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
-use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
-use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractImportValidationDto;
+use Wexample\SymfonyEntityTransfer\Exception\PropertyTypeException;
 
 /**
  * Denormalizer for import DTOs that handles mixed type properties

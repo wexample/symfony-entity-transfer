@@ -2,10 +2,10 @@
 
 namespace Wexample\SymfonyEntityTransfer\Dto\File;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractImportDto;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Choice;
 use Wexample\SymfonyApi\Api\Attribute\RequiredDtoProperty;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractImportDto;
 use Wexample\SymfonyHelpers\Helper\VariableHelper;
 
 class AbstractImportRootDto extends AbstractImportDto

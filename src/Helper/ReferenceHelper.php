@@ -2,13 +2,12 @@
 
 namespace Wexample\SymfonyEntityTransfer\Helper;
 
+use Wexample\Helpers\Helper\ClassHelper;
+use Wexample\Helpers\Helper\TextHelper;
 use Wexample\SymfonyEntityTransfer\Class\RelationFieldInfo;
-
 use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 use Wexample\SymfonyEntityTransfer\Dto\AbstractImportValidationDto;
 use Wexample\SymfonyEntityTransfer\Interface\ImportableEntityInterface;
-use Wexample\Helpers\Helper\ClassHelper;
-use Wexample\Helpers\Helper\TextHelper;
 use Wexample\SymfonyHelpers\Entity\AbstractEntity;
 
 /**

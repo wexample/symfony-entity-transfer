@@ -2,9 +2,9 @@
 
 namespace Wexample\SymfonyEntityTransfer\Exception;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
-use Wexample\SymfonyEntityTransfer\Class\RelationFieldInfo;
 use Exception;
+use Wexample\SymfonyEntityTransfer\Class\RelationFieldInfo;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 
 /**
  * Exception thrown when an entity referenced by its unique field cannot be found during import

@@ -2,9 +2,9 @@
 
 namespace Wexample\SymfonyEntityTransfer\Service;
 
-use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
 use Symfony\Contracts\Service\ResetInterface;
 use Wexample\Helpers\Helper\ClassHelper;
+use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
 use Wexample\SymfonyHelpers\Helper\EntityHelper;
 
 /**

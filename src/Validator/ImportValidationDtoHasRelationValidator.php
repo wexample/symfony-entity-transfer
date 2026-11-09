@@ -2,14 +2,14 @@
 
 namespace Wexample\SymfonyEntityTransfer\Validator;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
-use Wexample\SymfonyEntityTransfer\Interface\ImportableEntityInterface;
-use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use Wexample\Helpers\Helper\ClassHelper;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
+use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
+use Wexample\SymfonyEntityTransfer\Interface\ImportableEntityInterface;
 use Wexample\SymfonyHelpers\Entity\AbstractEntity;
 
 /**

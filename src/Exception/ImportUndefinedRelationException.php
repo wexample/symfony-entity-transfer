@@ -2,9 +2,9 @@
 
 namespace Wexample\SymfonyEntityTransfer\Exception;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 use Exception;
 use Wexample\Helpers\Helper\ClassHelper;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
 
 /**
  * Exception thrown when a relation referenced during import cannot be found

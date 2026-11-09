@@ -7,8 +7,8 @@ use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 use Throwable;
 use Wexample\SymfonyEntityTransfer\Class\TransferReport;
 use Wexample\SymfonyEntityTransfer\DependencyInjection\WexampleSymfonyEntityTransferExtension;
-use Wexample\SymfonyEntityTransfer\Interface\FileUpcasterInterface;
 use Wexample\SymfonyEntityTransfer\Dto\File\AbstractImportRootDto;
+use Wexample\SymfonyEntityTransfer\Interface\FileUpcasterInterface;
 use Wexample\SymfonyHelpers\Entity\AbstractEntity;
 use Wexample\SymfonyHelpers\Helper\JsonHelper;
 

@@ -5,6 +5,7 @@ namespace Wexample\SymfonyEntityTransfer\Tests\Integration;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Wexample\Helpers\Helper\ArrayHelper;
 use Wexample\SymfonyEntityTransfer\Class\TransferReport;
 use Wexample\SymfonyEntityTransfer\Exception\ImportUniqueFieldNotFoundException;
 use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
@@ -12,7 +13,6 @@ use Wexample\SymfonyEntityTransfer\Service\ImportExportServiceLocator;
 use Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Entity\Book;
 use Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Entity\Shelf;
 use Wexample\SymfonyEntityTransfer\Tests\Fixtures\App\Service\LibraryCollectionService;
-use Wexample\Helpers\Helper\ArrayHelper;
 
 /**
  * Files of shelves and books imported, exported back, a root at a time.

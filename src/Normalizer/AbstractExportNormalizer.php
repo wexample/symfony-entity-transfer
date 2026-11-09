@@ -2,13 +2,13 @@
 
 namespace Wexample\SymfonyEntityTransfer\Normalizer;
 
-use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
-use Wexample\SymfonyEntityTransfer\Service\ExportReferencesBagService;
-use Wexample\SymfonyEntityTransfer\Service\ImportExportServiceLocator;
 use ArrayObject;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
+use Wexample\SymfonyEntityTransfer\Helper\ReferenceHelper;
+use Wexample\SymfonyEntityTransfer\Service\ExportReferencesBagService;
+use Wexample\SymfonyEntityTransfer\Service\ImportExportServiceLocator;
 use Wexample\SymfonyHelpers\Entity\AbstractEntity;
 use Wexample\SymfonyHelpers\Normalizer\AbstractLegacyEntityNormalizer;
 

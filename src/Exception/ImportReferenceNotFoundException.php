@@ -2,10 +2,10 @@
 
 namespace Wexample\SymfonyEntityTransfer\Exception;
 
-use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
-use Wexample\SymfonyEntityTransfer\Class\RelationFieldInfo;
-use Wexample\SymfonyEntityTransfer\Service\ImportReferencesBagService;
 use Exception;
+use Wexample\SymfonyEntityTransfer\Class\RelationFieldInfo;
+use Wexample\SymfonyEntityTransfer\Dto\AbstractEntityImportValidationDto;
+use Wexample\SymfonyEntityTransfer\Service\ImportReferencesBagService;
 
 /**
  * Exception thrown when a reference (_ref) cannot be found during import
