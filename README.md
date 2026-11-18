@@ -1,6 +1,6 @@
 # symfony-entity-transfer
 
-Version: 3.0.0
+Version: 3.0.1
 
 Import and export of Doctrine entities as files: references between them, unique reuse, one transaction per root, dry runs
 
